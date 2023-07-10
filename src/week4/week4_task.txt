@@ -1,0 +1,132 @@
+PennyMachine [scanner, if, operators]
+
+	Create a program that will ask the user to enter the number of pennies they have. Use the number of cents they give and convert them to dollars, quarters, dimes, nickles, and left over pennies. This machine can only handle from 1-1200 cents at a type
+
+	-> if the given cents is not in our defined range (1-1200) print "Sorry we cannot process your request"
+
+	-> if the cents are valid print the result in the following format:
+		$initial_cents was converted to $dollars, $quarters, $dimes, $nickles, and $pennies
+
+	Extra challenge: If there is 0 of a specific type do not include it in the final output
+
+	------------------------------------------------------------------------
+
+Hotel [scanner, conditional, operators]
+
+	Create a program that will allow you to check into a hotel. When checking in some information will be gathered and used to determine the information about the room and price
+
+	Go through the following flow:
+
+		Welcome to the Java Hotel
+		How many days will you stay
+		-> read number of days from console
+		How many people are in your party
+		-> read number of people from console
+
+	In addition declare these variables:
+		price, room type
+
+	Use the information gathered to assign a room to the guests and print the information
+
+	Data:
+		number of people: 1
+		assigned to a single room
+		price is: number of days staying * 100
+
+		number of people: 2
+		assigned to a double room
+		price is: number of days staying * 125
+
+		number of people: 3 or 4
+		assigned to a large room
+		price is: number of days staying * number of people * 50
+
+		number of people: 5 or 6
+		assigned to a suite
+		price is: number of days staying * 1000
+
+		any other number of people is invalid and should output:
+			sorry $number_of_people is not a valid group size
+
+	------------------------------------------------------------------------
+
+ModifyWord [indexes, conditional]
+
+	Create a program that will ask the user to enter a word. Check if the word starts and ends with the same character. If they are the same delete those characters
+
+	if the characters we not the same replace the first charter to be '*' and the last character to be #
+
+	print the results
+
+	------------------------------------------------------------------------
+
+Name [Scanner, String methods]
+
+	Create a program that will ask the user to enter their name. The name should be accepted as (first name + space + last name). The program will not be able to handle any other format
+
+	Take the name and do two things:
+		1) Print the name in correct formatting meaning the first letter of the first name and last name would be uppercase and the rest will be lowercase
+
+		2) Print the initials of the person
+
+	------------------------------------------------------------------------
+
+Url [Scanner, String methods, conditional]
+
+	Create a program that will allow the user to enter a url. The program will verify if the given url is valid and if it is print the domain name
+
+	A url is valid if it has "www." in the beginning and has either .com, .org, .edu. or .gov at the end
+
+	If the url is valid print the domain name part: $url is a valid url for google
+
+		ex: www.google.com
+			www.google.com is a valid url for google
+
+	If the url is not valid print the reason it is not valid:
+
+		ex: amazon.com
+		Sorry, amazon.com is not valid because it is missing these:
+			www. in the beginning
+
+		ex: youtube
+		Sorry, youtube is not valid because it is missing these:
+			www. in the beginning
+			.com, .org, .edu, or .gov in the end
+
+	------------------------------------------------------------------------
+
+SmsParts [substring, indexOf]
+
+	Create a program that will has a message String in this exact format:
+
+		Sender: <NAME>. From number: [NUMBER]. Message: {MESSAGE}
+
+	The content of name, number and message can vary, so based on the format extract those parts and output them.
+
+	Ex:
+	Sender: <Omer Karahan>. From Number: [202-123-3456]. Message: {I love programming and problem solving}
+
+	Output:
+		Sender: Omer Karahan
+		Number: 202-123-3456
+		Message: I love programming and problem solving
+
+	------------------------------------------------------------------------
+
+MiddleCharacters [indexes, cases, length]
+
+	Create a program that will ask the user to enter a word. Return the word in lowercase expect for the middle character/s in uppercase
+
+	Note: based on if the word is even or odd there will be either two middle characters(even length) or one middle character (odd length)
+
+	Ex:
+		input:
+			apple
+		output:
+			apPle
+
+		input:
+			JavA
+		output:
+			jAVa
+	------------------------------------------------------------------------

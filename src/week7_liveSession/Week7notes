@@ -1,0 +1,154 @@
+03/26/2023
+
+Week 7
+Day18 - Memory Management
+Day19 - Array Intro
+Day20 - Array Continue, For Each
+__________________________________________________________________
+
+Morning - Java
+Afternoon - Soft Skills
+
+Memory
+Array objects
+Decimal Format
+Arrays class
+split(), toCharArray()
+for each loop
+__________________________________________________________________
+
+Memory
+
+	jvm will allocate memory automatically when a program is run
+
+	stack: holds method frames, local variables, references
+
+	heap: holds objects, String pool
+
+	null: no object, a placeholder when there is no value
+
+	GC: garbage collection is used to clean up the memory. When run it removes any object that is not referenced
+
+	finalize() -> method called to help GC clean memory
+		deprecated since java 9, so not recommended to use
+__________________________________________________________________
+
+Array:
+
+In programming languages we have data structures that allow us to handle data easily and efficiently
+
+    Array is a data structure
+    Arrays are objects
+        they are not created like other object. The JVM handles the creation of these objects differently
+
+How to create an array
+
+    1) datatype [] arrayName = { };
+
+        String [] cities = { "San Fransisco", "Moscow", "Madison", "Tokyo", "Baghdad" };
+        int [] nums = { 3, 1, 5, 4};
+
+    2) datatype [] arrayName = new datatype[size]
+
+        String [] names = new String[2];    [ null, null ]
+        int [] numbers = new int[3];    [ 0 , 0 , 0 ]
+
+        When you make an array this way the elements have default values
+            int -> 0
+            double -> 0.0
+            object -> null  (String)
+            boolean -> false
+            char -> '\u0000' (null character, Unicode 0)
+
+    3) Declare and assign
+
+        double [] prices = new double[]{10.5, 50.6, 30.9};
+
+How to read each element of the array
+
+    each element in the array has an index starting from 0
+
+    String [] cities = { "San Fransisco", "Moscow", "Madison", "Tokyo", "Baghdad" };
+                                0            1          2         3         4
+    arrayName[index]
+        cities[0] -> "San Fransisco"
+        cities[4] -> "Baghdad"
+        cities[5] -> ArraysIndexOutOfBoundsException
+
+How to change/assign an element to the array
+
+    arrayName[index] = value
+__________________________________________________________________
+
+Arrays class
+    located in java.util
+
+https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Arrays.html
+
+    not the array objects that store information
+
+    This is a class/file that has useful methods for Arrays
+
+    some useful method:
+        Arrays.toString()
+        Arrays.equals()
+        Arrays.sort()
+        Arrays.copyOf()
+__________________________________________________________________
+
+Decimal Format
+
+	DecimalFormat: used for rounding the decimals numbers
+		class is in java.text package
+
+    Ex:
+	DecimalFormat df = new DecimalFormat("0.00");
+	DecimalFormat df = new DecimalFormat("0.000");
+
+	df.format(NUMBER_HERE) -> method to format the given argument based on the defined pattern
+
+    useful patterns:
+        0 - a number is always displayed
+        # - omits leading zeros
+        . - decimal separator
+        , - group separator
+        % - percentage
+__________________________________________________________________
+
+String methods: methods in the String class
+
+	toCharArray(): converts the String to a char array
+		returns char[]
+		Ex:
+			String s = "java";
+			s.toCharArray() --> ['j', 'a', 'v', 'a']
+
+	split(): break the String into parts, where each part is a different element in a String array
+		return String[]
+
+		common use case: separate words in a sentence
+
+			String str = "today is friday";
+			str.split(" ") --> ["today", "is", "friday"]
+__________________________________________________________________
+
+for each loop
+
+	used for collections/data structures
+    	so far we can only use with array
+
+    for(datatype variableName : array){
+
+    }
+
+    The for each loop executes from the beginning of the array to the end, one element at a time
+
+	Advantages:
+		- clean and readable code
+		- no need to keep track of iterations
+		- always checks every element by default
+
+	Disadvantages:
+		- only goes forwards, cannot be used to go backward
+		- no control of element via index
+        - does not allow changes in size of collection (relevant later)
